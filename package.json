@@ -1,0 +1,18 @@
+{
+  "name": "pantone-converter",
+  "version": "0.0.1",
+  "description": "Package allows you to convert pantrone name to hex and conversely.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "pantone-converter"
+  },
+  "keywords": [
+    "pantone"
+  ],
+  "author": "ED1FF",
+  "license": "MIT"
+}
