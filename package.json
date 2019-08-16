@@ -1,6 +1,6 @@
 {
   "name": "pantone-converter",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "WIP Package allows you to convert pantrone name to hex and conversely.",
   "main": "bundle.js",
   "scripts": {
