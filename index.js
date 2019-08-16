@@ -1,12 +1,13 @@
 class PantoneConverter {
 
+  // TODO Make it case independed
   pantoneToHex(name) {
-    return pantones[name] || 'No such pantone'
+    return pantones[name] || 'No such pantone name'
   }
 
   pantoneToRgb(name) {
     var hex = this.pantoneToHex(name)
-    if(hex == 'No such pantone') { return hex; }
+    if(hex == 'No such pantone name') { return hex; }
 
     hex = hex.replace('#', '');
     var r = parseInt(hex.substring(0, 2), 16);
@@ -17,11 +18,23 @@ class PantoneConverter {
     return result;
   }
 
-  hexToPantone(name) {
-    var name = name.toUpperCase()
-    if(!name.includes('#')) { name = '#' + name }
+  hexToPantone(hex) {
+    hex = hex.toUpperCase()
+    if(!hex.includes('#')) { hex = '#' + hex }
 
-    return Object.keys(pantones).find(key => pantones[key] === name)
+    return this.nearestColor(hex)
+  }
+
+  strictHexToPantone(hex) {
+    var hex = hex.toUpperCase()
+    if(!hex.includes('#')) { hex = '#' + hex }
+
+    return Object.keys(pantones).find(key => pantones[key] === hex)
+  }
+
+  nearestColor(hex) {
+    nearestColor.from(pantones)
+    return nearestColor(hex)
   }
 
 }
@@ -32,6 +45,7 @@ let initPantoneConverter = function() {
 
 initPantoneConverter()
 
+// TODO Move to separate JSON file.
 const pantones = { "Pantone PMS 100": "#F4ED7C",
 "Pantone PMS 101": "#F4ED47",
 "Pantone PMS 102": "#F9E814",
@@ -939,5 +953,6 @@ const pantones = { "Pantone PMS 100": "#F4ED7C",
 "Pantone PMS 811": "#FF5416",
 "Pantone PMS 812": "#FC074F",
 "Pantone PMS 813": "#D10084",
-"Pantone PMS 814": "#703FAF"
-}
+"Pantone PMS 814": "#703FAF" }
+
+
