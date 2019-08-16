@@ -13,6 +13,9 @@
   "keywords": [
     "pantone"
   ],
+  "dependencies": {
+    "nearest-color": "0.4.4"
+  }
   "author": "ED1FF",
   "license": "MIT"
 }

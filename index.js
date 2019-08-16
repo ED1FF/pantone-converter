@@ -27,7 +27,7 @@ class PantoneConverter {
 }
 
 let initPantoneConverter = function() {
-  return PantoneConverter;
+  return pantoneConverter = new PantoneConverter;
 }
 
 initPantoneConverter()
