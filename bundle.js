@@ -36,7 +36,7 @@ class PantoneConverter {
   // TODO fix this
   nearestPantone(hex) {
     var nearestPantone = require('nearest-color').from(pantones);
-    return nearestColor(hex)
+    return nearestPantone(hex)
   }
 
 }
