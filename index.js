@@ -1,26 +1,27 @@
 class PantoneConverter {
 
-  constructor(name) {
-    this.name = name;
+  pantoneToHex(name) {
+    return pantones[name] || 'No such pantone'
   }
 
-  pantoneToHex() {
-    return pantones[this.name] || 'No such pantone'
-  }
+  pantoneToRgb(name) {
+    var hex = this.pantoneToHex(name)
+    if(hex == 'No such pantone') { return hex; }
 
-  pantoneToRgb() {
-    if(this.hex() == 'No such pantone') { return 'No such pantone'; }
-    var hex = this.hex().replace('#','');
-    var r = parseInt(hex.substring(0,2), 16);
-    var g = parseInt(hex.substring(2,4), 16);
-    var b = parseInt(hex.substring(4,6), 16);
+    hex = hex.replace('#', '');
+    var r = parseInt(hex.substring(0, 2), 16);
+    var g = parseInt(hex.substring(2, 4), 16);
+    var b = parseInt(hex.substring(4, 6), 16);
 
     var result = 'rgb('+r+','+g+','+b+')';
     return result;
   }
 
-  hexToPantone() {
-    return Object.keys(pantones).find(key => pantones[key] === this.name);
+  hexToPantone(name) {
+    var name = name.toUpperCase()
+    if(!name.includes('#')) { name = '#' + name }
+
+    return Object.keys(pantones).find(key => pantones[key] === name)
   }
 
 }
@@ -938,5 +939,5 @@ const pantones = { "Pantone PMS 100": "#F4ED7C",
 "Pantone PMS 811": "#FF5416",
 "Pantone PMS 812": "#FC074F",
 "Pantone PMS 813": "#D10084",
-"Pantone PMS 814": "#703FAF" }
-
+"Pantone PMS 814": "#703FAF"
+}
