@@ -22,7 +22,7 @@ class PantoneConverter {
     hex = hex.toUpperCase()
     if(!hex.includes('#')) { hex = '#' + hex }
 
-    return this.nearestColor(hex)
+    return this.nearestPantone(hex)
   }
 
   strictHexToPantone(hex) {
@@ -33,9 +33,9 @@ class PantoneConverter {
   }
 
   // TODO fix this
-  nearestColor(hex) {
-    var nearestPantoneColor = require('nearest-color').from(pantones);
-    return nearestPantoneColor(hex)
+  nearestPantone(hex) {
+    var nearestPantone = require('nearest-color').from(pantones);
+    return nearestColor(hex)
   }
 
 }
