@@ -32,7 +32,7 @@ class PantoneConverter {
     return Object.keys(pantones).find(key => pantones[key] === hex)
   }
 
-  // TODO refactor this
+  // TODO fix this
   nearestColor(hex) {
     nearestColor.from(pantones)
     return nearestColor(hex)
