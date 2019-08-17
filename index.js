@@ -34,7 +34,7 @@ class PantoneConverter {
 
   // TODO fix this
   nearestPantone(hex) {
-    var nearestPantone = require('nearest-color').from(pantones);
+    var nearestPantone = require('nearest-color').from(pantone_list);
     return nearestPantone(hex)
   }
 
@@ -46,4 +46,4 @@ let initPantoneConverter = function() {
 
 initPantoneConverter()
 
-let pantones = require('./pantones.json');
+let pantone_list = require('./pantones.json');
