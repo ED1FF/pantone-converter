@@ -3,7 +3,7 @@ class PantoneConverter {
 
   // TODO Make it case independed
   pantoneToHex(name) {
-    return pantones[name] || 'No such pantone name'
+    return pantone_list[name] || 'No such pantone name'
   }
 
   pantoneToRgb(name) {
@@ -30,7 +30,7 @@ class PantoneConverter {
     var hex = hex.toUpperCase()
     if(!hex.includes('#')) { hex = '#' + hex }
 
-    return Object.keys(pantones).find(key => pantones[key] === hex)
+    return Object.keys(pantone_list).find(key => pantone_list[key] === hex)
   }
 
   // TODO fix this
