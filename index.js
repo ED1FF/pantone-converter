@@ -38,6 +38,22 @@ class PantoneConverter {
     return nearestPantone(hex)
   }
 
+  generatePantoneSelectOptions() {
+    var options = ["<option value=''></option>"];
+    Object.keys(pantone_list).forEach(function(key) {
+      return options.push("<option value='" + pantone_list[key] + "'>" + key + "</option>");
+    });
+    return options;
+  }
+
+  setPantoneSelectionForInput(input_class) {
+    inputs = document.getElementsByClassName(input_class);
+    content = this.generatePantoneSelectOptions()
+
+    for (var i = 0; i < inputs.length; i++) {
+      inputs[i].innerHTML = content;
+    }
+  }
 }
 
 let initPantoneConverter = function() {
