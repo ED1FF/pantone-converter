@@ -47,8 +47,8 @@ class PantoneConverter {
   }
 
   setPantoneSelectionForInput(input_class) {
-    inputs = document.getElementsByClassName(input_class);
-    content = this.generatePantoneSelectOptions()
+    var inputs = document.getElementsByClassName(input_class);
+    var content = this.generatePantoneSelectOptions()
 
     for (var i = 0; i < inputs.length; i++) {
       inputs[i].innerHTML = content;
